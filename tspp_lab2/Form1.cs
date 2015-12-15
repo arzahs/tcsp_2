@@ -95,5 +95,53 @@ namespace tspp_lab2
             writer.Close();
 
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            
+            if (checkBox1.Checked)
+            {
+                maxU = arrData[0, 0];
+                if (maxU < arrData[0, 3])
+                {
+                    maxU = arrData[0, 3];
+                }
+                else if (maxU < arrData[2, 0])
+                {
+                    maxU = arrData[2, 0];
+                }
+                else if (maxU < arrData[2, 3])
+                {
+                    maxU = arrData[2, 3];
+                }
+                textBox3.Text = maxU.ToString();
+            }
+            else
+            {
+                textBox3.Text = "";
+                maxU = double.NaN;
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                maxIJ = arrData[0, 0];
+                for (int i = 0; i < 3; i++)
+                {
+                    if (arrData[i, i] > maxIJ)
+                        maxIJ = arrData[i, i];
+
+                }
+
+                textBox4.Text = maxIJ.ToString();
+            }
+            else
+            {
+                textBox4.Text = "";
+                maxIJ = double.NaN;
+            }
+        }
     }
 }

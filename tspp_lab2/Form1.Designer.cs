@@ -107,6 +107,7 @@
             this.checkBox2.TabIndex = 1;
             this.checkBox2.Text = "Xmax i=j";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // checkBox1
             // 
@@ -117,6 +118,7 @@
             this.checkBox1.TabIndex = 0;
             this.checkBox1.Text = "Xmax u";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // button1
             // 
