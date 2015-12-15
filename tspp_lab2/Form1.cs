@@ -30,6 +30,44 @@ namespace tspp_lab2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (openFileDialog1.ShowDialog() == DialogResult.Cancel) return;
+            reader = new StreamReader(openFileDialog1.FileName);
+            string[] arrStrings; 
+            string workString;
+            textBox1.Clear();//очищення вікна відображення вихідних даних
+            textBox2.Clear();//очищення вікна відображення результатів
+            Array.Clear(arrData, 0, arrData.Length);//очищення масиву даних
+            textBox3.Clear();
+            textBox4.Clear();
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+            checkBox1.Checked = false;
+            checkBox2.Checked = false;
+
+            int K = 0;      //кількість елементів у рядку файлу
+            for (int i = 0; i < 3; i++)
+            {
+                if (reader.EndOfStream) break;
+                workString = reader.ReadLine();    //ввід чергового рядка
+                arrStrings = workString.Split(separator);//розбивка на масив підрядків по ","
+                //якщо елементів у рядку  < 4
+                
+                if (arrStrings.Length < 4) 
+                    K = arrStrings.Length; 
+                else K = 4;
+
+                for (int j = 0; j < K; j++)//перетворення й запис у масив чисел
+                {
+                    arrData[i, j] = Double.Parse(arrStrings[j], System.Globalization.CultureInfo.InvariantCulture);
+                    textBox1.Text += arrStrings[j] + ", ";//вивід у вікно відображення даних
+                }
+
+                textBox1.Text += "\r\n";    //перехід на новий рядок
+            }
+            reader.Close();
+
+
+
 
         }
     }
