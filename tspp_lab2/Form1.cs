@@ -16,7 +16,7 @@ namespace tspp_lab2
         
         double[,] arrData = new double[3, 4], 
         arrRezult = new double[3, 4];
-        double maxU, maxIJ;
+        double sr, sr2;
         StreamReader reader;	
         StreamWriter writer;	
         char[] separator = { ',' };
@@ -101,25 +101,22 @@ namespace tspp_lab2
             
             if (checkBox1.Checked)
             {
-                maxU = arrData[0, 0];
-                if (maxU < arrData[0, 3])
+                double Sum = 1;
+                for (int i = 0; i < 3; i++)
                 {
-                    maxU = arrData[0, 3];
+                    for (int j = 0; j < 4; j++)
+                    {
+                        Sum *= arrData[i, j];
+
+                    }
                 }
-                else if (maxU < arrData[2, 0])
-                {
-                    maxU = arrData[2, 0];
-                }
-                else if (maxU < arrData[2, 3])
-                {
-                    maxU = arrData[2, 3];
-                }
-                textBox3.Text = maxU.ToString();
+                sr = Math.Sqrt(Sum);
+                textBox3.Text = sr.ToString();
             }
             else
             {
                 textBox3.Text = "";
-                maxU = double.NaN;
+                sr = double.NaN;
             }
         }
 
@@ -127,20 +124,18 @@ namespace tspp_lab2
         {
             if (checkBox2.Checked)
             {
-                maxIJ = arrData[0, 0];
+                double Sum = 1 ;
                 for (int i = 0; i < 3; i++)
                 {
-                    if (arrData[i, i] > maxIJ)
-                        maxIJ = arrData[i, i];
-
+                     Sum *= arrData[i,1];
                 }
-
-                textBox4.Text = maxIJ.ToString();
+                sr2 = Math.Sqrt(Sum);
+                textBox4.Text = sr2.ToString();
             }
             else
             {
                 textBox4.Text = "";
-                maxIJ = double.NaN;
+                sr2 = double.NaN;
             }
         }
 
@@ -153,7 +148,7 @@ namespace tspp_lab2
                 {
                     for (int j = 0; j < 4; j++)
                     {
-                        arrRezult[i, j] = Math.Log10(Math.Abs(arrData[i, j]));
+                        arrRezult[i, j] = Math.Sin(arrData[i, j]);
                         textBox2.Text += " " + arrRezult[i, j].ToString() + ",";
                     }
                     textBox2.Text += "\r\n";
@@ -175,7 +170,7 @@ namespace tspp_lab2
                 {
                     for (int j = 0; j < 4; j++)
                     {
-                        arrRezult[i, j] = (Math.Pow(arrData[i, j], 2) + Math.Pow(maxU, 2))/(arrData[i,j] + maxIJ);
+                        arrRezult[i, j] = (Math.Pow(arrData[i, j], 2) + Math.Sqrt(sr)) / (Math.Sqrt(sr2));
                         textBox2.Text += " " + arrRezult[i, j].ToString() + ",";
                     }
                     textBox2.Text += "\r\n";

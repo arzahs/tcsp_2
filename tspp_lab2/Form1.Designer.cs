@@ -101,11 +101,11 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(7, 67);
+            this.checkBox2.Location = new System.Drawing.Point(7, 71);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(65, 17);
+            this.checkBox2.Size = new System.Drawing.Size(47, 17);
             this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Xmax i=j";
+            this.checkBox2.Text = "Xsr2";
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
@@ -114,9 +114,9 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(7, 20);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(61, 17);
+            this.checkBox1.Size = new System.Drawing.Size(41, 17);
             this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Xmax u";
+            this.checkBox1.Text = "Xsr";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
@@ -176,9 +176,9 @@
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(6, 45);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(210, 17);
+            this.radioButton2.Size = new System.Drawing.Size(179, 17);
             this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "Xi,j = (Xi,j^2+Wmax u^2)/(Xi,j +Xmaxi=j)";
+            this.radioButton2.Text = "Xi,j = (Xi,j^2+sqrt(Xsr))/sqrt(Xsr2 )";
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
@@ -188,9 +188,9 @@
             this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton1.Location = new System.Drawing.Point(6, 19);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(83, 17);
+            this.radioButton1.Size = new System.Drawing.Size(90, 17);
             this.radioButton1.TabIndex = 0;
-            this.radioButton1.Text = "Xi,j = ln| Xi,j |";
+            this.radioButton1.Text = "Xi,j = sin( Xi,j )";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
@@ -217,7 +217,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
-            this.Text = "ТСПП лаб2 Нелепа";
+            this.Text = "ТСПП лаб2 Левашова";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
