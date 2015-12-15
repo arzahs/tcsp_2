@@ -143,5 +143,44 @@ namespace tspp_lab2
                 maxIJ = double.NaN;
             }
         }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                textBox2.Clear();
+                for (int i = 0; i < 3; i++)
+                {
+                    for (int j = 0; j < 4; j++)
+                    {
+                        arrRezult[i, j] = Math.Log10(Math.Abs(arrData[i, j]));
+                        textBox2.Text += " " + arrRezult[i, j].ToString() + ",";
+                    }
+                    textBox2.Text += "\r\n";
+                }
+            }
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton2.Checked)
+            {
+                
+               checkBox1.Checked = true;
+               checkBox2.Checked = true;
+
+                textBox2.Clear();
+                for (int i = 0; i < 3; i++)
+                {
+                    for (int j = 0; j < 4; j++)
+                    {
+                        arrRezult[i, j] = (Math.Pow(arrData[i, j], 2) + Math.Pow(maxU, 2))/(arrData[i,j] + maxIJ);
+                        textBox2.Text += " " + arrRezult[i, j].ToString() + ",";
+                    }
+                    textBox2.Text += "\r\n";
+                }
+            }
+        }
     }
 }
