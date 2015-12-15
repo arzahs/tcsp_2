@@ -7,27 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace tspp_lab2
 {
     public partial class Form1 : Form
     {
+        
+        double[,] arrData = new double[3, 4], 
+        arrRezult = new double[3, 4];
+        double maxU, maxIJ;
+        StreamReader reader;	
+        StreamWriter writer;	
+        char[] separator = { ',' };
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
+       
 
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }
