@@ -70,5 +70,30 @@ namespace tspp_lab2
 
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //якщо натиснуто кнопку Cancel, те вихід з методу
+            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel) return;
+            //створення нового потоку для виводу
+            writer = new StreamWriter(saveFileDialog1.FileName);
+            //цикл запису у файл
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    writer.Write(arrRezult[i, j]);
+                    if (j != 3) writer.Write(", ");    //наприкінці рядка не повинне бути «,»
+                }
+                writer.WriteLine();		//запис перекладу рядка
+            }
+            writer.Close();
+
+        }
     }
 }
